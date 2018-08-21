@@ -5,34 +5,20 @@
 <head>
 	<title>Home</title>
 	<link rel="shortcut icon" href="${context}/resources/img/favicon.ico" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Landing Page - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="${context }/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="${context }/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="${context }/resources/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="${context }/resources/css/landing-page.min.css" rel="stylesheet">
+    <link href="${context}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${context}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${context}/resources/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="${context}/resources/css/landing-page.min.css" rel="stylesheet">
 	
-	
-	
-	
-	<script src="${context}/resources/js/app.js"></script>
 </head>
 <body>
    <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Yanolja!</a>
         <a id="login_btn" class="btn btn-primary" href="#">로그인</a>
       </div>
     </nav>
@@ -43,7 +29,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+            <h1 class="mb-5">야놀자와 함께 여행을 떠나 볼까요?</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
@@ -101,17 +87,17 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters">
 
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('${context}/resources/img/bg-showcase-1.jpg');"></div>
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('${context}/resources/img/event1.png');"></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Fully Responsive Design</h2>
-            <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+            <h2>숙박도 레저도 초특가 야놀자!</h2>
+            <p class="lead mb-0">지금 야놀자(APP)에서 레저/티켓 최대 80% 할인 받고 놀러가자!</p>
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url('${context}/resources/img/bg-showcase-2.jpg');"></div>
+          <div class="col-lg-6 text-white showcase-img" style="background-image: url('${context}/resources/img/event2.png');"></div>
           <div class="col-lg-6 my-auto showcase-text">
-            <h2>Updated For Bootstrap 4</h2>
-            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+            <h2>초특가 이벤트!</h2>
+            <p class="lead mb-0">로그인만 해도 10만원 쿠폰팩 지급!! 3번 예약할 때마다 10만원 쿠폰팩 무한지급!!</p>
           </div>
         </div>
         <div class="row no-gutters">
@@ -235,7 +221,7 @@
 	$('#login_btn').on('click',()=>{
 		alert('로그인 버튼클릭2');
 	})
-	/* common.main('${context}'); */
+	/* common.main('${context}'); */ 
 </script>
 </body>
 </html>
