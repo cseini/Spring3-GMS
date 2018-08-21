@@ -10,7 +10,6 @@ var router = (()=> {
 var common = (()=>{
 	return {
 		main : x=> {
-			alert('컨텍스트 패스 :'+ x );
 			service.addClass(document.querySelector('body'),'fontDefault backgroundColorWhite margin0px padding0px fontColorGray ')
 			service.addClass(document.getElementById('wrapper'),'width100pt padding0px margetnLeftAuto margetnRightAuto ')
 			service.addClass(document.getElementById('header'),'marginBottom0px padding0px positionRelative ')
