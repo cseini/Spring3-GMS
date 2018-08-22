@@ -11,7 +11,7 @@ app = {
 		app.setContentView();
 	},
 	setContentView : ()=>{
-		alert('Step 4 : '+app.session.path('js'));
+		alert('Step 4 : '+app.session.path('js')); 
 	} 
 };
 app.session={
@@ -25,5 +25,4 @@ app.session={
 		path : x=>{
 			return sessionStorage.getItem(x);
 		}
-		
 };
