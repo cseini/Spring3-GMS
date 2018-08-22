@@ -12,7 +12,7 @@ app = {
 	},
 	setContentView : ()=>{
 		alert('Step 4 : '+app.session.path('js'));
-	}
+	} 
 };
 app.session={
 		context : x=>{
