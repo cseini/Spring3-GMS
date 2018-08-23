@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<div class="container text-center">
 <div id="content-box">
 	<h1>회원가입</h1><br />
 	<form id="join_form">
@@ -36,6 +37,7 @@
 	<div id="join_form_btn_style">
 		<a id="join_form_btn">가입하기</a>
 	</div>
+</div>
 </div>
 <script>
 

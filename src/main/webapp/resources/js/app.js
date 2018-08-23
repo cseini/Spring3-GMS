@@ -2,27 +2,57 @@
 var app = app || {};
 app = {
 	init : x=>{
-		alert('Step 1');
+		console.log('Step 1');
 		app.session.context(x);
 		app.onCreate();
 	},
 	onCreate : ()=>{
-		alert('Step 3');
+		console.log('Step 3');
 		app.setContentView();
+		$('#login_btn').click(()=>{
+			location.href=app.x()+'/move/auth/member/login';
+		});
+		$('#logout_btn').click(()=>{
+			location.href=app.x()+'/member/logout';
+		});
+		$('#add_btn').click(()=>{
+			location.href=app.x()+'/move/auth/member/add';
+		});
+		$('#login_form_btn').click(()=>{
+			location.href=app.x()+'/member/login';
+		});
+		$('#join_form_btn').click(()=>{
+			location.href=app.x()+'/member/add';
+		});
+		$('#retrieve_btn').click(()=>{
+			location.href=app.x()+'/member/retrieve';
+		});
 	},
 	setContentView : ()=>{
-		alert('Step 4 : '+app.session.path('js')); 
+		console.log('Step 4 : '+app.j());
 	} 
 };
 app.session={
-		context : x=>{
-			alert('Step 2 : '+ x);
-			sessionStorage.setItem('context',x);
-			sessionStorage.setItem('js',x+'/resources/js');
-			sessionStorage.setItem('css',x+'/resources/css');
-			sessionStorage.setItem('img',x+'/resources/img');
-		},
-		path : x=>{
-			return sessionStorage.getItem(x);
-		}
+	context : x=>{
+		console.log('Step 2 : '+ x);
+		sessionStorage.setItem('context',x);
+		sessionStorage.setItem('js',x+'/resources/js');
+		sessionStorage.setItem('css',x+'/resources/css');
+		sessionStorage.setItem('img',x+'/resources/img');
+	},
+	path : x=>{
+		return sessionStorage.getItem(x);
+	}
+};
+app.x=()=>{
+	return app.session.path('context');
+};
+app.j=()=>{
+	return app.session.path('js');
+};
+app.c=()=>{
+	return app.session.path('css');
+};
+app.i=()=>{
+	return app.session.path('img');
 };
