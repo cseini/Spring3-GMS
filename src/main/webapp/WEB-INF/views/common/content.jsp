@@ -7,7 +7,7 @@
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
                 <i class="icon-screen-desktop m-auto text-primary"></i>
-              </div>
+              </div> 
               <h3>야놀자</h3>
               <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
             </div>
