@@ -22,7 +22,6 @@ public class HomeController {
 		logger.info("Welcome home! The Context Path is {}.", context);
 		/*model.addAttribute("context", context );*/
 		session.setAttribute("context",context);
-		
 		return "public:common/content.tiles";
 	}
 	@RequestMapping("/move/{prefix}/{dir}/{page}")

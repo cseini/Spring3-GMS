@@ -27,6 +27,9 @@ app = {
 		$('#retrieve_btn').click(()=>{
 			location.href=app.x()+'/member/retrieve';
 		});
+		$('#logo-btn').click(()=>{
+			location.href=app.x();
+		});
 	},
 	setContentView : ()=>{
 		console.log('Step 4 : '+app.j());
