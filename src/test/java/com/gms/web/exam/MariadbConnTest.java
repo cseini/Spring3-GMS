@@ -11,5 +11,5 @@ public class MariadbConnTest {
 		MariadbConn m = new MariadbConn();
 		assertEquals("hong", m.exam());
 	}
-
+ 
 }
