@@ -47,5 +47,4 @@
 		<property name="username" value="mariadb"/>
 		<property name="password" value="mariadb"/>
 	</bean>
-	
 </beans>
