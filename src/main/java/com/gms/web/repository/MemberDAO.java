@@ -7,7 +7,7 @@ import com.gms.web.domain.MemberDTO;
 
 public interface MemberDAO {
 	public void insert(MemberDTO p);
-	public List<?> selectLisk(Map<?,?>p);
+	public List<?> selectList(Map<?,?>p);
 	public List<?> selectSome(Map<?,?>p);
 	public MemberDTO selectOne(Map<?,?>p);
 	public int count(Map<?,?>p);

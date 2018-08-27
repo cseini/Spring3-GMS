@@ -21,7 +21,7 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public List<?> selectLisk(Map<?, ?> p) {
+	public List<?> selectList(Map<?, ?> p) {
 		return null;
 	}
 
