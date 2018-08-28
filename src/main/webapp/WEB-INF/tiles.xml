@@ -19,11 +19,19 @@
 	</definition>
 	<definition name="login_success" extends="public">
 		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/common/content.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/member/retrieve.jsp"/>
+	</definition>
+	<definition name="login_failed" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="content" value="/WEB-INF/views/member/login.jsp"/>
 	</definition>
 	<definition name="retrieve" extends="public">
 		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
 		<put-attribute name="header" value=""/>
 		<put-attribute name="content" value="/WEB-INF/views/member/retrieve.jsp"/>
+	</definition>
+	<definition name="add_failed" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="content" value="/WEB-INF/views/member/add.jsp"/>
 	</definition>
 </tiles-definitions>

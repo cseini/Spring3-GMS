@@ -9,10 +9,10 @@ public interface MemberDAO {
 	public void insert(MemberDTO p);
 	public List<?> selectList(Map<?,?>p);
 	public List<?> selectSome(Map<?,?>p);
-	public MemberDTO selectOne(Map<?,?>p);
+	public MemberDTO selectOne(String p);
 	public int count(Map<?,?>p);
-	public void update(Map<?,?>p);
-	public void delete(Map<?,?>p);
-	public boolean login(Map<?,?>p);
+	public void update(MemberDTO p);
+	public void delete(MemberDTO p);
+	public boolean login(MemberDTO p);
 	public void logout(Map<?,?>p);
 }

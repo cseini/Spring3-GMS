@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div id="content-box">
+<div id="content-box" class="container text-center">
 <h1> 정보 변경 </h1><br />
 	<form id="update_member" name="update_member" >
-	<input type="hidden" name="userid" value="${member.userId }" />
+	<input type="hidden" name="userid" value="${user.userid }" />
 		<input type="password" id="password" name="password" placeholder="이전비밀번호:${user.password}"/><br /><br />
-		팀(현재소속팀:${user.teamId})
+		<input type="text" id="email" name="email" placeholder="이전 이메일:${user.email}"/><br /><br />
+		<input type="text" id="phone" name="phone" placeholder="이전 전화번호:${user.phone}"/><br /><br />
+		팀(현재소속팀:${user.teamid})
 			<input type="radio" name="teamid" id="teamid_0" value="none" checked="checked" /> 없음
 			<input type="radio" name="teamid" id="teamid_1" value="nolja" /> 걍놀자
 			<input type="radio" name="teamid" id="teamid_2" value="jienHouse" /> 지은이네
@@ -24,9 +26,7 @@
 	  <input type="submit" value="파일업로드">
 
 	</form><br />
-	<div id="update_member_btn_style">
-		<a id="update_member_btn"> 업데이트 </a>
-	</div>
+		<a id="update_member_btn" class="btn btn-primary w-25"> 업데이트 </a>
 	</div>
 <script>
 </script>

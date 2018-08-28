@@ -1,22 +1,45 @@
 package com.gms.web.service.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gms.web.domain.MemberDTO;
-import com.gms.web.mapper.MemberMapper;
 import com.gms.web.repository.MemberDAO;
 import com.gms.web.service.MemberService;
 
 @Service
 public class MemberServiceImpl implements MemberService{
+	static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	@Autowired MemberDAO memberDAO;
 	@Override
 	public void add(MemberDTO p) {
-		
+		String age = String.valueOf(Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))-(Integer.parseInt(p.getSsn().substring(0, 2))+1900-1));
+		String gender = "";
+		switch (p.getSsn().split("-")[1]) {
+		case "1":case "3":
+			gender = "남";
+			break;
+		case "2":case "4":
+			gender = "여";
+			break;
+		case "5":case "6":
+			gender = "외국인";
+			break;
+		default:
+			break;
+		}
+		p.setAge(age);
+		p.setGender(gender);
+		System.out.println("나이 : "+age);
+		System.out.println("성별 : "+gender);
+		memberDAO.insert(p);
 	}
 
 	@Override
@@ -30,7 +53,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public MemberDTO retrieve(Map<?, ?> p) {
+	public MemberDTO retrieve(String p) {
+		logger.info("\n--------- MemberServiceImpl {} !!-----","retrieve()");
 		return memberDAO.selectOne(p);
 	}
 
@@ -40,18 +64,19 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void modify(Map<?, ?> p) {
-		
+	public void modify(MemberDTO p) {
+		memberDAO.update(p);
 	}
 
 	@Override
-	public void remove(Map<?, ?> p) {
-		
+	public void remove(MemberDTO p) {
+		memberDAO.delete(p);
 	}
 
 	@Override
-	public boolean login(Map<?, ?> p) {
-		return false;
+	public boolean login(MemberDTO p) {
+		logger.info("\n--------- MemberServiceImpl {} !!-----","login()");
+		return memberDAO.login(p);
 	}
 
 	@Override

@@ -17,7 +17,8 @@ public class MemberMapper implements MemberDAO{
 	private static final String ns = "com.gms.web.mapper.MemberMapper";
 	@Override
 	public void insert(MemberDTO p) {
-		
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.insert(ns+".insert", p);
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public MemberDTO selectOne(Map<?, ?> p) {
+	public MemberDTO selectOne(String p) {
 		SqlSession sqlSession = factory.openSession();
 		return (MemberDTO) sqlSession.selectOne(ns+".selectOne", p);
 	}
@@ -42,18 +43,21 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public void update(Map<?, ?> p) {
-		
+	public void update(MemberDTO p) {
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.update(ns+".update", p);
 	}
 
 	@Override
-	public void delete(Map<?, ?> p) {
-		
+	public void delete(MemberDTO p) {
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.delete(ns+".delete", p);
 	}
 
 	@Override
-	public boolean login(Map<?, ?> p) {
-		return false;
+	public boolean login(MemberDTO p) {
+		SqlSession sqlSession = factory.openSession();
+		return (sqlSession.selectOne(ns+".login", p)!=null);
 	}
 
 	@Override
