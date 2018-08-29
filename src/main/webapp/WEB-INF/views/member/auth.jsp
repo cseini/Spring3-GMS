@@ -8,3 +8,8 @@
     </div>
   </div>
 </nav>
+<script>
+	if(!'${user}'==""){
+		user.session({userid:'${user.userid}',name:'${user.name}',teamid:'${user.teamid}',roll:'${user.roll}',age:'${user.age}',gender:'${user.gender}',ssn:'${user.ssn}',phone:'${user.phone}',email:'${user.email}'});
+	}
+</script>

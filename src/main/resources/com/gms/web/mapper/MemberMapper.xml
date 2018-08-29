@@ -12,8 +12,8 @@
     SELECT USERID, NAME, SSN, AGE, GENDER, TEAMID, ROLL, PHONE, EMAIL FROM member
     WHERE USERID LIKE #{userid}
   </select>
-  <select id="login" resultType="boolean">
-    SELECT USERID FROM member
+  <select id="login" resultType="string">
+    SELECT COUNT(USERID) FROM member
     WHERE USERID LIKE #{userid}
     AND PASSWORD LIKE #{password}
   </select>

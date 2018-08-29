@@ -35,17 +35,18 @@ app = {
 			}).submit();
 		});
 		$('#retrieve_btn').click(()=>{
-			location.href=app.x()+'/member/retrieve/'+app.userid();
+			location.href=app.x()+'/member/retrieve/'+user.get('userid');
 		});
 		$('#logout-btn').click(()=>{
 			location.href=app.x();
 		});
 		$('#move_update_form').click(()=>{
+			alert(user.get('userid'));
 			location.href=app.x()+'/move/login/member/modify';
 		});
 		$('#update_member_btn').click(()=>{
 			$('#update_member').attr({
-				action : app.x()+"/member/modify/"+app.userid(),
+				action : app.x()+"/member/modify/"+user.get('userid'),
 				method: "post"
 			}).submit();
 		});
@@ -54,24 +55,13 @@ app = {
 		});
 		$('#delete_form_btn').click(()=>{
 			$('#delete_form').attr({
-				action : app.x()+"/member/remove/"+app.userid(),
+				action : app.x()+"/member/remove/"+user.get('userid'),
 				method: "post"
 			}).submit();
 		});
 	},
 	setContentView : ()=>{
 		console.log('Step 4 : '+app.j());
-	},setUser : x=>{
-		sessionStorage.setItem('user',x);
-		sessionStorage.setItem('userid',x.userid);
-		sessionStorage.setItem('name',x.name);
-		sessionStorage.setItem('teamid',x.teamid);
-		sessionStorage.setItem('ssn',x.ssn);
-		sessionStorage.setItem('gender',x.gender);
-		sessionStorage.setItem('age',x.age);
-		sessionStorage.setItem('phone',x.phone);
-		sessionStorage.setItem('email',x.email);
-		sessionStorage.setItem('roll',x.roll);
 	}
 };
 app.session={
@@ -85,9 +75,6 @@ app.session={
 	path : x=>{
 		return sessionStorage.getItem(x);
 	},
-	setUserInfomation : x =>{
-		
-	}
 };
 app.x=()=>{
 	return app.session.path('context');
@@ -101,33 +88,13 @@ app.c=()=>{
 app.i=()=>{
 	return app.session.path('img');
 };
-app.getUser=()=>{
-	return sessionStorage.getItem('user');
+var user = user || {};
+user.session = x=>{
+	$.each(x, function(k,v){
+		/*alert('key:'+k+', value:'+v)*/
+		sessionStorage.setItem(k,v);
+	});
 }
-app.userid=()=>{
-	return sessionStorage.getItem('userid');
-}
-app.name=()=>{
-	return sessionStorage.getItem('name');
-}
-app.teamid=()=>{
-	return sessionStorage.getItem('teamid');
-}
-app.ssn=()=>{
-	return sessionStorage.getItem('ssn');
-}
-app.gender=()=>{
-	return sessionStorage.getItem('gender');
-}
-app.age=()=>{
-	return sessionStorage.getItem('age');
-}
-app.phone=()=>{
-	return sessionStorage.getItem('phone');
-}
-app.email=()=>{
-	return sessionStorage.getItem('email');
-}
-app.roll=()=>{
-	return sessionStorage.getItem('roll');
+user.get = x=>{
+	return sessionStorage.getItem(x);
 }

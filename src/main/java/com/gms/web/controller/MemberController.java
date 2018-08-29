@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
@@ -43,6 +42,7 @@ public class MemberController {
 	@RequestMapping("/retrieve/{userid}")
 	public String retrieve(Model model, @PathVariable String userid) {
 		logger.info("\n--------- MemberController {} !!-----","retrieve()");
+		System.out.println(userid);
 		MemberDTO m = memberService.retrieve(userid);
 		model.addAttribute("user", m);
 		return "retrieve";
@@ -71,7 +71,7 @@ public class MemberController {
 		String loginval = "login_failed";
 		Map<String,String> p = new HashMap<>();
 		p.put("userid", member.getUserid());
-		if(memberService.login(member)) {
+		if(memberService.login(member).equals("1")) {
 			MemberDTO m = memberService.retrieve(member.getUserid());
 			model.addAttribute("user", m);
 			loginval = "login_success";

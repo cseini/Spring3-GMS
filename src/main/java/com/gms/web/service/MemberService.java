@@ -13,6 +13,6 @@ public interface MemberService {
 	public int count(Map<?,?>p);
 	public void modify(MemberDTO p);
 	public void remove(MemberDTO p);
-	public boolean login(MemberDTO p);
+	public String login(MemberDTO p);
 	public void logout(Map<?,?>p);
 }

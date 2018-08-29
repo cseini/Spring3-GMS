@@ -38,6 +38,5 @@
 		<a id="move_delete_form" class="btn btn-primary w-250px">회원탈퇴 이동</a>
 	</div>
 <script>
-	app.setUser({userid:'${user.userid}',name:'${user.name}',teamid:'${user.teamid}',roll:'${user.roll}',age:'${user.age}'
-	,gender:'${user.gender}',ssn:'${user.ssn}',phone:'${user.phone}',email:'${user.email}'});
+	
 </script>

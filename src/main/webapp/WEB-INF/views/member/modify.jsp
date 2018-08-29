@@ -29,14 +29,14 @@
 		<a id="update_member_btn" class="btn btn-primary w-25"> 업데이트 </a>
 	</div>
 <script>
-	$('#userid').attr("value", app.userid());
-	$('#email').attr("placeholder", "이전 이메일 : "+app.email());
-	$('#phone').attr("placeholder", "이전 전화번호 : "+app.phone());
+	$('#userid').attr("value", user.get('userid'));
+	$('#email').attr("placeholder", "이전 이메일 : "+user.get('email'));
+	$('#phone').attr("placeholder", "이전 전화번호 : "+user.get('phone'));
 	var form = document.getElementById('update_member');
 	var roll = document.getElementById('roll');
 	var team = document.getElementsByName('teamid');
 	for(var i=0;i<roll.options.length;i++){
-		if(roll.options[i].value===app.roll()){
+		if(roll.options[i].value===user.get('roll')){
 			roll.options[i].setAttribute("selected","selected");
 		}
 	};

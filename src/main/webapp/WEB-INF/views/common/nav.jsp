@@ -6,7 +6,6 @@
     <div class="float-right">
 	    <a id="login_btn" class="btn btn-primary w-100px " href="#">로그인</a>
 	    <a id="add_btn" class="btn btn-primary w-100px " href="#">회원가입</a>
-	    <a id="test_btn" class="btn btn-primary w-100px " href="#">test</a>
     </div>
   </div>
 </nav>
