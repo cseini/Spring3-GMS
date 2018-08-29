@@ -5,7 +5,7 @@ app = {
 		console.log('Step 1');
 		app.session.context(x);
 		app.onCreate();
-	},
+	}, 
 	onCreate : ()=>{
 		console.log('Step 3');
 		app.setContentView();
