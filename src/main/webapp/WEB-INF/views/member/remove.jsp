@@ -4,7 +4,7 @@
 <form id="delete_form">
 <input type="password" name="password" placeholder="비밀번호를 입력하세요."/>  <br /><br />
 </form>	<br />
-	<a id="delete_form_btn" class="btn btn-primary w-25">탈퇴</a>
+	<a id="delete_form_btn" class="btn btn-primary w-300px">탈퇴</a>
 </div>
 <script>
 </script>

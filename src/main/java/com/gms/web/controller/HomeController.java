@@ -1,5 +1,7 @@
 package com.gms.web.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -24,7 +26,7 @@ public class HomeController {
 		session.setAttribute("context",context);
 		return "public:common/content.tiles";
 	}
-	@RequestMapping("/move/{prefix}/{dir}/{page}")
+	@RequestMapping(value="/move/{prefix}/{dir}/{page}")
 	public String move(
 			@PathVariable String prefix,
 			@PathVariable String dir,

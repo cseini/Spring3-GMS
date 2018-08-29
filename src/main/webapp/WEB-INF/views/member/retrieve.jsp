@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div class="container text-center">
-<div id="content-box">
-	<table id="mypage-table">
+<div id="content-box" class="text-center" >
+	<table id="mypage-table" class="table table-bordered w-50 m-auto">
 		<tr>
 		<td colspan="2" rowspan="3"><img src="${img}/${profile}" alt="" height="300px"/></td> 
 			<td>아이디</td>
@@ -35,10 +34,9 @@
 			<td>${user.phone }</td>
 		</tr>
 	</table><br />
-		<a id="move_update_form" class="btn btn-primary">개인정보 수정 이동</a>
-		<a id="move_delete_form" class="btn btn-primary">회원탈퇴 이동</a>
+		<a id="move_update_form" class="btn btn-primary w-250px">개인정보 수정 이동</a>
+		<a id="move_delete_form" class="btn btn-primary w-250px">회원탈퇴 이동</a>
 	</div>
-</div>
 <script>
 	app.setUser({userid:'${user.userid}',name:'${user.name}',teamid:'${user.teamid}',roll:'${user.roll}',age:'${user.age}'
 	,gender:'${user.gender}',ssn:'${user.ssn}',phone:'${user.phone}',email:'${user.email}'});

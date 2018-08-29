@@ -2,14 +2,14 @@
 <div class="container text-center">
 <div id="content-box">
 	<h1>회원가입</h1><br />
-	<form id="join_form">
-	<div id="join_form_textbox">
+	<form id="join_form" >
+	<div id="join_form_textbox" >
 		<input type="text" name="userid" placeholder="아이디를 입력하세요." required="required"/><br /><br />
 		<input type="password" name="password" placeholder="비밀번호를 입력하세요." required="required"/><br /><br />
 		<input type="text" name="name" placeholder="이름을 입력하세요." required="required"/><br /><br />
-		<input type="text" name="ssn" placeholder="주민등록번호를 입력하세요.(예: xxxxxx-x)" required="required" /><br />
-		<input type="text" name="email" placeholder="email을 입력하세요." required="required"/><br /><br />
-		<input type="text" name="phone" placeholder="핸드폰 번호를 입력하세요." required="required"/><br /><br /><br /><br />
+		<input type="text" name="ssn" placeholder="주민등록번호를 입력하세요.(예: xxxxxx-x)" required="required" /><br /><br />
+		<input type="email" name="email" placeholder="email을 입력하세요." required="required"/><br /><br />
+		<input type="tel" name="phone" placeholder="핸드폰 번호를 입력하세요." required="required"/><br /><br />
 	</div>
 	<div id="join_form_otherbox">
 		소속팀
@@ -36,7 +36,7 @@
 		<input type="checkbox" name="subject" value="Spring" /> Spring<br /><br />
 		</div>
 	</form>
-		<a id="join_form_btn" class="btn btn-primary">가입하기</a>
+		<a id="join_form_btn" class="btn btn-primary w-300px">가입하기</a>
 </div>
 </div>
 <script>

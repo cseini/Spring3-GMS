@@ -265,9 +265,17 @@ button, select {
 	border-style: none
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox], input[type=radio], input[type=text], input[type=password] {
 	box-sizing: border-box;
-	padding: 0
+	padding: 0;
+	text-align: center;
+}
+input[type=text], input[type=password], input[type=email], input[type=tel] {
+	box-sizing: border-box;
+	padding: 0;
+	text-align: center;
+	width: 300px;
+	height: 50px;
 }
 
 input[type=date], input[type=datetime-local], input[type=month], input[type=time]
@@ -2292,7 +2300,7 @@ select.form-control:focus::-ms-value {
 	border: 1px solid transparent;
 	padding: .375rem .75rem;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 2;
 	border-radius: .25rem;
 	transition: color .15s ease-in-out, background-color .15s ease-in-out,
 		border-color .15s ease-in-out, box-shadow .15s ease-in-out
@@ -7315,7 +7323,15 @@ supports ((position:-webkit-sticky ) or (position:sticky )){ .
 .shadow-none {
 	box-shadow: none !important
 }
-
+.w-100px {
+	width: 100px !important
+}
+.w-250px {
+	width: 250px !important
+}
+.w-300px {
+	width: 300px !important
+}
 .w-25 {
 	width: 25% !important
 }

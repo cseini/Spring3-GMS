@@ -5,22 +5,12 @@ app = {
 		console.log('Step 1');
 		app.session.context(x);
 		app.onCreate();
-	},setUser : x=>{
-		sessionStorage.setItem('userid',x.userid);
-		sessionStorage.setItem('name',x.name);
-		sessionStorage.setItem('teamid',x.teamid);
-		sessionStorage.setItem('ssn',x.ssn);
-		sessionStorage.setItem('gender',x.gender);
-		sessionStorage.setItem('age',x.age);
-		sessionStorage.setItem('phone',x.phone);
-		sessionStorage.setItem('email',x.email);
-		sessionStorage.setItem('roll',x.roll);
 	},
 	onCreate : ()=>{
 		console.log('Step 3');
 		app.setContentView();
 		$('#login_btn').click(()=>{
-			location.href=app.x()+'/move/auth/member/login';
+			location.href=app.x()+'/move/auth/member/login'
 		});
 		$('#logout_btn').click(()=>{
 			location.href=app.x()+'/member/logout';
@@ -51,7 +41,7 @@ app = {
 			location.href=app.x();
 		});
 		$('#move_update_form').click(()=>{
-			location.href=app.x()+'/move/auth/member/modify';
+			location.href=app.x()+'/move/login/member/modify';
 		});
 		$('#update_member_btn').click(()=>{
 			$('#update_member').attr({
@@ -60,7 +50,7 @@ app = {
 			}).submit();
 		});
 		$('#move_delete_form').click(()=>{
-			location.href=app.x()+'/move/auth/member/remove';
+			location.href=app.x()+'/move/login/member/remove';
 		});
 		$('#delete_form_btn').click(()=>{
 			$('#delete_form').attr({
@@ -71,6 +61,17 @@ app = {
 	},
 	setContentView : ()=>{
 		console.log('Step 4 : '+app.j());
+	},setUser : x=>{
+		sessionStorage.setItem('user',x);
+		sessionStorage.setItem('userid',x.userid);
+		sessionStorage.setItem('name',x.name);
+		sessionStorage.setItem('teamid',x.teamid);
+		sessionStorage.setItem('ssn',x.ssn);
+		sessionStorage.setItem('gender',x.gender);
+		sessionStorage.setItem('age',x.age);
+		sessionStorage.setItem('phone',x.phone);
+		sessionStorage.setItem('email',x.email);
+		sessionStorage.setItem('roll',x.roll);
 	}
 };
 app.session={
@@ -80,10 +81,12 @@ app.session={
 		sessionStorage.setItem('js',x+'/resources/js');
 		sessionStorage.setItem('css',x+'/resources/css');
 		sessionStorage.setItem('img',x+'/resources/img');
-		
 	},
 	path : x=>{
 		return sessionStorage.getItem(x);
+	},
+	setUserInfomation : x =>{
+		
 	}
 };
 app.x=()=>{
@@ -98,6 +101,9 @@ app.c=()=>{
 app.i=()=>{
 	return app.session.path('img');
 };
+app.getUser=()=>{
+	return sessionStorage.getItem('user');
+}
 app.userid=()=>{
 	return sessionStorage.getItem('userid');
 }
